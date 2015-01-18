@@ -1,0 +1,59 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
+
+<html>
+<head>
+    <title>What should I call my Bro?</title>
+    <style>
+    body {
+        margin-top: 150px;
+        color: #000;
+        background-color: #ffffff;
+        text-align:center;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 60px;
+        font-weight: 800;
+        color: #000;
+        text-transform: uppercase;
+    }
+
+    a:link {
+        text-decoration:none;
+        font-size:12px;
+    }
+    a:active {
+        text-decoration: none;
+    }
+    a:hover {
+        text-decoration: underline;
+    }
+    a:visited {
+        text-decoration: none;
+    }
+    #reload a {
+        color:#000;
+    }
+    </style>
+</head>
+
+<body>
+    <p id="content">Sup, {{name}}</p>
+
+    <div id="reload"><a href="javascript:new_word();">Tell me more, brah</a></div>
+
+    <script>
+    function choose(choices) {
+        return choices[Math.floor(Math.random() * choices.length)];
+    }
+
+    function new_word() {
+        // The second item in each words entry is the typ of speech as follows:
+        // 1:'Verb', 2:'Noun', 3:'Adjective', 4:'Proper noun', 5:'Adverb'
+        var words = [["BROrtmanteau",2],["quidBROquo",2],["abBROgate",3],["BRObot",2],["BROlish",3],["MexiBRO",4],["pseudBRO",2],["BROlix",3],["BROrocco",4],["BRObile",3],["AngBROla",4],["BROlivia",4],["pseudBROnym",2],["BROnaco",4],["BROngolia",4],["BROmania",4],["BROngo",4],["BROatia",4],["BROldova",4],["PuertBRORico",4],["MiBROnesia",4],["MacedBROnia",4],["BROmato",2],["BROlarsystem",4],["BROpacetic",3],["BROlloquial",3],["indigBRO",2],["hellBRO",2],["primBROse",2],["avocadBRO",2],["BRoverweight",3],["BROmosome",2],["ManitBROba",4],["BROmanian",3],["BROcal",3],["BROrgo",1],["BROretold",1],["lingBRO",2],["BRoutgrow",1],["BRoverdrew",1],["BRoverate",1],["BRovereaten",1],["BRoverhear",1],["BRoverheard",1],["BRoverlaid",1],["BRoverlain",1],["BRoverpay",1],["BRoverpaid",1],["BRoversaw",1],["BRoverseen",1],["BRoversell",1],["BRovershoot",2],["BRovershot",1],["BRoverslept",1],["BRovertake",1],["BRovertook",1],["BRoverthrow",1],["BRoverthrown",1],["BROgent",3],["BROntrol",1],["miBRObe",2],["buffalBRO",2],["BROdem",2],["narBROw",3],["BRObody",2],["tantBRO",2],["defactBRO",5],["BROmaji",2],["BROalesce",1],["BROton",2],["BROology",2],["BROlding",2],["BROdium",2],["BROvey",2],["BROcust",2],["BROwnload",2],["BROmium",2],["BROlonium",2],["BROtactinium",2],["BROduce",1],["arBROw",2],["miBROscopic",3],["BROtagonist",2],["BROmogeneous",3],["scareBROw",2],["BRoligarchy",2],["BROltage",2],["BROsine",2],["BROdecahedron",2],["BROpenhagen",4],["BROrose",3],["rigmaBROle",2],["BROsaic",3],["NaiBRObi",4],["payBROll",2],["BROmbonist",2],["BROquacious",3],["BROmali",4],["banBRO",2],["BROrrow",1],["BROcrastinate",1],["marBROw",2],["BROllage",2],["BROatian",3],["barBROw",2],["BROcoa",2],["BROtato",2],["BRObacco",2],["creBRole",2],["mangBRO",2],["BROcus",2],["BRoasis",2],["BROmunculus",2],["placeBRO",2],["rhinBRO",2],["pyBROtechnic",3],["autoBRObile",2],["hipBRO",2],["BROken",2],["BROcale",2],["akimBRO",3],["BROadstool",2],["anthBROpologic",3],["anthBROpologist",2],["BROpious",3],["BROtel",2],["BROaster",2],["BROmponent",2],["apBRObation",2],["absolutezeBRO",2],["BROpher",2],["necBROphilia",2],["BROdiac",2],["BRoctothorpe",2],["BROtein",2],["annoBROmini",5],["legatBRO",5],["crescendBRO",2],["BROjibake",2],["palinBROme",2],["BROner",2],["imBROglio",2],["BROnation",2],["pareidBROlia",2],["BROjourn",2],["BROtion",2],["BROgnosis",2],["BRodometer",2],["maestBRO",2],["BROologist",2],["BROatee",2],["hyBROphobia",2],["BROmeboy",2],["disBRO",2],["BROtocol",2],["BROrward",2],["BROnely",3],["abogadBRO",2],["habaneBRO",2],["apoptBROsis",2],["BROrmone",2],["BROgurt",2],["BROgomachy",2],["BRoverseas",3],["cereBROny",2],["anBRode",2],["cantBRO",2],["esBROw",2],["BROcal",3],["embargBRO",2],["BROment",1],["BROtive",2],["BROtean",3],["BRO-called",3],["NeBRolithic",3],["bingBRO",2],["BROgenitor",2],["BROsopagnosia",2],["BROmely",3],["TyBROne",4],["BROrnhole",2],["meadBRow",2],["threshBRold",2],["BROmograph",2],["BROma",2],["BROalition",2],["BROtal",2],["albedBRO",2],["tangBRO",2],["BROwer",3],["GitBRO",4],["BROser",2],["asBROciate",3],["bimBRO",2],["BROcus",2],["BROlorado",4],["NorthDakBRota",4],["BROmentum",2],["enBROss",1],["BROrough",2],["falsettBRO",2],["BRoverdraft",2],["BROherent",3],["BROlden",3],["BROyota",4],["exBROnential",3],["glottochBROnology",2],["BROter",2],["abydBROcomist",2],["acBROcephalic",2],["BRoleaginous",3],["amBROsia",2],["BROlka",2],["heliotBROpe",2],["BROmanEmpire",4],["chayBRote",2],["ChicagBRO",4],["BRoneirocritic",2],["BRorthoepy",2],["BROmicide",2],["BROmmotion",2],["BROmbone",2],["BRObotic",3],["BRObotics",2],["BRoverwhelm",1],["disBRObe",1],["BROrogue",1],["hetBROnym",2],["lasBRO",2],["BRodious",3],["clausBROphobe",2],["BROgus",3],["BROtionless",3],["innBROvative",3],["acriBROnious",3],["BROmantic",3],["macaBROni",2],["BROpefully",5],["BROlystone",2],["BRoutpost",2],["beBROth",1],["BRovation",2],["BRowing",3],["BROological",3],["BROdel",1],["BROlin",4],["BROlecism",2],["BROtally",5],["BROnnote",1],["widBRower",2],["dittBRO",2],["BROmpost",2],["circumlBROcution",2],["BROeval",3],["BROtabene",2],["limBRO",2],["BROwling",1],["BROebegone",3],["thorBRough",3],["BROliage",2],["BROtion",2],["MicBROsoft",2],["BROtentate",2],["cuckBRold",2],["enBROssing",1],["BROciopath",2],["symBROsium",2],["gustBRO",2],["BROanword",2],["pandeBROnium",2],["photBROsynthesis",2],["synBROme",2],["BROneofcontention",2],["BROteworthy",3],["machisBRO",2],["LuBROphone",3],["perBROlate",1],["miBROcosm",2],["BROscenium",2],["BROnomania",2],["reBROduce",1],["BROtoriety",2],["BROtation",2],["cellBRO",2],["PlatBRO",4],["exBROsure",2],["antiBROcial",3],["miBROscope",2],["BROcaccia",2],["BROlely",5],["BROstfix",1],["devBROtion",2],["CreBRole",2],["DraBRO",4],["LadinBRO",4],["LatinBRO",3],["BRObile",4],["BROman",3],["BRObusta",2],["BROmentous",3],["BROotomy",2],["PaleBRolithic",2],["autBROlogical",3],["BROconut",2],["Asperger'ssynBROme",2],["BROnyism",2],["BROwman",2],["reBROach",2],["allBROphone",2],["BROmino",2],["BROminoes",2],["theBRologian",2],["BROletariat",2],["BROprioception",2],["BROmeostasis",2],["BROld-blooded",3],["BROquet",2],["grottBRO",2],["BROficient",3],["palominBRO",2],["tetBROmino",2],["BROnafide",3],["BROldabscess",2],["BRoblation",2],["tuxedBRO",2],["BROjan",2],["BROses",2],["whatBROever",3],["BROllate",1],["BROlar",3],["BROmologue",2],["BROcent",3],["alfresBRO",3],["BROceeds",2],["himBRO",2],["BROne-eatingsnotflowerworm",2],["BROchet",2],["BRoverpower",1],["BRovershadow",1],["endBROmorph",2],["ectBROmorph",2],["JerBRoboam",4],["BRoxytone",3],["BRoxytones",2],["BROrrosion",2],["BROcund",3],["abraBRO",2],["psychoBROmatic",3],["meBROmorph",2],["manBROve",2],["BROtozoan",2],["choriBRO",2],["BRotology",2],["harBROw",2],["BROagulate",1],["BROllocation",2],["MiskitBRO",4],["pleBROma",2],["gigolBRO",2],["BRoverstep",1],["BROnochrome",2],["BROcocurante",3],["BROsaic",2],["BROtivate",1],["zygBROdactylous",3],["psittaBROsis",2],["adenBROma",2],["BROgnomen",2],["thBROwback",2],["BROliminous",3],["ShintBRO",4],["BROrecastle",2],["BROneliness",2],["BROpal",2],["rapBROchement",2],["phyllBRO",2],["BRoffload",1],["BRoligarch",2],["BROnytail",2],["BROesis",2],["BROema",2],["BRovershoe",2],["BRObation",2],["xenBRodochium",2],["BROreclose",1],["BROmelo",2],["BRoccipitallobe",2],["BROcalize",1],["BROlarSystem",4],["BRodalisque",2],["BROjoba",2],["BRolfactory",3],["BROetic",3],["BROman'sland",2],["asBRObleme",2],["ukiyBRo-e",2],["BROmmodious",3],["BROquetry",2],["BROcable",2],["BROotropic",2],["creBRosote",2],["BROgistic",3],["BRoverjoyed",3],["YamoussoukBRO",4],["hyBROplane",1],["BRoverwork",1],["paparazBRO",2],["BROgnomens",2],["BROning",1],["BROnomaniac",2],["minestBROne",2],["BROnative",3],["OrlandBRO",4],["BROfaking",5],["BROteus",4],["BROmaticaberration",2],["BROlestation",2],["JimBRO",4],["BROton",2],["BROldrush",2],["ArapaBRO",2],["guyBRot",2],["AcapulBRO",4],["antiheBRO",2],["antiBROcially",5],["BROcalization",2],["BROlder",3],["BROextensive",3],["BROardingpass",2],["BROlma",2],["BRoverstate",1],["BROlkadot",2],["BROstilion",2],["BRopacity",2],["BROaxial",3],["BROnroe",4],["BROtelier",2],["gasBROintestinal",3],["polyptBROton",2],["BROcals",2],["jumBRO",3],["xenobiBRology",2],["BRopuscule",2],["BROtown",4],["BROsta",2],["BROmeliad",2],["pimientBRO",2],["pimentBRO",2],["BROtomac",4],["BROsey",1],["BRovertone",2],["BROmolog",2],["benBROcaine",2],["metBROpole",2],["BRoverloading",2],["lardBRO",2],["BROllinosis",2],["BROjito",2],["miBROpyle",2],["neuBROepithelium",2],["BROreknow",1],["BROcebo",2],["maraschinBROcherry",2],["retBROactively",5],["BROgaed",3],["BROconsul",2],["BROfuseness",2],["agriBROny",2],["BROnocycle",2],["BROsonic",3],["disBROball",2],["neuBROgeneticist",2],["anthBROpological",3],["BROrmothermic",3],["teneBROse",3],["BROzole",2],["BRoverfall",2],["BROviet",4],["anastBROmose",1],["anastBROmosing",1],["BROgation",2],["BRovoviviparous",3],["deBROtivate",1],["BROgodaedaly",2],["hypotBROchoid",2],["inteBROceanic",3],["logBROlogical",3],["meadBRowsweet",2],["hyBROthermal",3],["AlepBRO",4],["BROachability",2],["BROfa-bed",2],["AphBRodisiac",3],["BROwable",3],["marienBROsche",2],["iaBROgenesis",2],["BROemata",2],["BROsiopesis",2],["BROsiopeses",2],["BROsiopetic",3],["BROmography",2],["BROppet",2],["PaleBRo-Eskimo",3],["BRowndom",2],["BROmesweethome",2],["AntBROnius",4],["cabildBRO",2],["BROrachio",2],["BROtotill",1],["BROvity",2],["BROrphosis",2],["BROsepetal",2],["BROwmanship",2],["BRoverwait",1],["ababsurdBRO",5],["abarthBROses",2],["abilBRO",2],["AbongBRO",4],["BROrajmos",4],["BROtol",2],["abBROnia",2],["BROmato",2],["BROphoplast",2],["asBROphile",2]];
+        var word = choose(words)[0];
+        var div = document.getElementById("content");
+        div.innerHTML = 'Sup, ' + word;
+    }
+    new_word();
+    </script>
+</body>
+</html>
